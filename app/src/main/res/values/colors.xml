@@ -4,6 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="burgundy">#8C3333</color>
     <color name="zero">#00000000</color>
-    <color name="purple">#9931AA</color>
-    <color name="purple50">#8941A4</color>
+    <color name="lightgray">#E2E2E2</color>
+    <color name="bluegray">#8D92A3</color>
+    <color name="gray">#aaaaaa</color>
+    <color name="purple">#6e1f82</color>
+    <color name="purple50">#66D1B2E0</color>
+    <color name="purpledark">#780E89</color>
 </resources>

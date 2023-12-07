@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Welcome to IMAEZIM!"
+        android:textColor="@color/gray"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="300dp"
@@ -67,8 +80,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:background="@drawable/border_curved"
-        android:backgroundTint="#4C3D3D"
+        android:background="@drawable/login_curved"
         android:fontFamily="@font/gothica1_medium"
         android:text="로그인"
         android:textColor="@color/white"
@@ -83,8 +95,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
-        android:background="@drawable/border_curved"
-        android:backgroundTint="@color/burgundy"
+        android:background="@drawable/join_curved"
         android:text="회원가입"
         android:textColor="@color/white"
         android:textSize="20sp"
