@@ -2,25 +2,16 @@ package com.example.imaezim
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.imaezim.databinding.ActivityArBinding
-import android.content.Intent
+import com.example.imaezim.databinding.ActivityMainBinding
 
 class ARActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityArBinding
+    //findbyview 생략 기능 추가
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ar)
-        binding = ActivityArBinding.inflate(layoutInflater)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.homeButtonAr.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.myfeedButtonAr.setOnClickListener {
-            val intent = Intent(this, MyFeedActivity::class.java)
-            startActivity(intent)
-        }
     }
 }
