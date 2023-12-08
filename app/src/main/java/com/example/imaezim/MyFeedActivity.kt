@@ -1,23 +1,20 @@
 package com.example.imaezim
 
 import MyFeedData
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.imaezim.databinding.ActivityMainBinding
+import com.example.imaezim.databinding.ActivityMyfeedBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MyFeedActivity : AppCompatActivity() {
-    //findbyview 생략 기능 추가
-    private lateinit var binding: ActivityMainBinding
-    //private lateinit var adapter: MyFeedAdapter
-    //private val dataList = mutableListOf<MyFeedData>()
-
+    private lateinit var binding: ActivityMyfeedBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_myfeed)
-        //binding = ActivityMainBinding.inflate(layoutInflater)
-        //setContentView(binding.root)
+        binding = ActivityMyfeedBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // 리사이클러뷰 초기화
         val recyclerView : RecyclerView = findViewById(R.id.rv_myfeed)
@@ -26,6 +23,16 @@ class MyFeedActivity : AppCompatActivity() {
         val dataList = generateData()
         val  adapter = MyFeedAdapter(this, dataList)
         recyclerView.adapter = adapter
+
+        binding.arButtonMyfeed.setOnClickListener {
+            val intent = Intent(this, ARActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.homeButtonMyfeed.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun generateData() : List<MyFeedData> {
