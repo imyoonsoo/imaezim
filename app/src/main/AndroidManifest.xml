@@ -56,9 +56,5 @@
             android:name=".ARActivity"
             android:exported="false">
         </activity>
-        <activity
-            android:name=".MyFeedActivity"
-            android:exported="false">
-        </activity>
     </application>
 </manifest>

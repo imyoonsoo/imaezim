@@ -1,17 +1,19 @@
 package com.example.imaezim
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.imaezim.databinding.ActivityMainBinding
+import com.example.imaezim.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
-    //findbyview 생략 기능 추가
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // 리사이클러뷰 초기화
         val recyclerView : RecyclerView = findViewById(R.id.rv_home)
@@ -20,6 +22,16 @@ class HomeActivity : AppCompatActivity() {
         val dataList = generateData()
         val adapter = HomeAdapter(this, dataList)
         recyclerView.adapter = adapter
+
+        binding.arButtonHome.setOnClickListener {
+            val intent = Intent(this, ARActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.myfeedButtonHome.setOnClickListener {
+            val intent = Intent(this, MyFeedActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun generateData() : List<HomeData> {
