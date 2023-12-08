@@ -22,6 +22,7 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
         val video: VideoView = view.findViewById(R.id.video)
         val audio: ImageButton = view.findViewById(R.id.audio)
         val map: ImageView = view.findViewById(R.id.map)
+        val divider: View = view.findViewById(R.id.divider)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,7 +41,7 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
                 holder.image.visibility = View.GONE
                 holder.video.visibility = View.GONE
                 holder.audio.visibility = View.GONE
-                holder.map.visibility=View.VISIBLE
+                holder.map.visibility = View.VISIBLE
             }
 
             MyFeedData.MemoType.IMAGE -> {
@@ -49,6 +50,7 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
                 holder.video.visibility = View.GONE
                 holder.audio.visibility = View.GONE
             }
+
             MyFeedData.MemoType.VIDEO -> {
                 holder.video.visibility = View.VISIBLE
                 holder.video.setVideoURI(Uri.parse("android.resource://" + context.packageName + "/" + item.video))
@@ -56,6 +58,7 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
                 holder.image.visibility = View.GONE
                 holder.audio.visibility = View.GONE
             }
+
             MyFeedData.MemoType.AUDIO -> {
                 holder.audio.visibility = View.VISIBLE
                 holder.text.visibility = View.GONE
@@ -63,6 +66,10 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
                 holder.video.visibility = View.GONE
             }
         }
+        if (position < itemList.size - 1)
+            holder.divider.visibility = View.VISIBLE
+        else
+            holder.divider.visibility = View.GONE
     }
 
     override fun getItemCount(): Int {
