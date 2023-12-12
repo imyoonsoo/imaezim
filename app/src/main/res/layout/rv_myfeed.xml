@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -9,78 +10,82 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/text"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="8dp"
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/divider"
-            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="5dp"
+            android:text="TextView"
+            android:textSize="20sp"
+            android:background="#f1edee"
+            app:layout_constraintBottom_toBottomOf="@+id/map"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.5" />
+            app:layout_constraintTop_toTopOf="@+id/map" />
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="0dp"
+            android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/divider"
-            app:layout_constraintHeight_percent="0.5"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/map"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.5" />
+            app:layout_constraintTop_toTopOf="@+id/map" />
 
         <VideoView
             android:id="@+id/video"
-            android:layout_width="0dp"
+            android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/divider"
-            app:layout_constraintHeight_percent="0.5"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/map"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.5" />
+            app:layout_constraintTop_toTopOf="@+id/map" />
 
         <ImageButton
             android:id="@+id/audio"
-            android:layout_width="0dp"
+            android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginStart="8dp"
-            android:contentDescription="This Button has audio source"
+            android:layout_marginStart="5dp"
+            android:contentDescription="Audio Button"
             android:src="@drawable/ic_audio_64px"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/divider"
-            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintBottom_toBottomOf="@+id/map"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.5" />
+            app:layout_constraintTop_toTopOf="@+id/map" />
 
-        <ImageView
+        <com.google.android.gms.maps.MapView
             android:id="@+id/map"
-            android:layout_width="0dp"
+            android:layout_width="200dp"
             android:layout_height="200dp"
-            app:layout_constraintBottom_toBottomOf="@+id/text"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="5dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.5"
-            app:layout_constraintTop_toTopOf="@+id/text"
-            app:layout_constraintWidth_percent="0.5" />
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            app:layout_constraintHorizontal_bias="1.0"
+            map:liteMode="true"/>
 
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="2.5dp"
+            android:layout_marginTop="0dp"
             android:background="@color/purple"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/map" />
+            app:layout_constraintTop_toBottomOf="@+id/map"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

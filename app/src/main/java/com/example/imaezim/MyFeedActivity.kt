@@ -36,10 +36,10 @@ class MyFeedActivity : AppCompatActivity() {
     }
 
     private fun generateData() : List<MyFeedData> {
-        val data1 = MyFeedData(MyFeedData.MemoType.TEXT, text="광화문 첫 방문! 이것저것 구경하고 맛있는 것도...", map = R.drawable.img_map_1)
-        val data2 = MyFeedData(MyFeedData.MemoType.IMAGE, image = R.drawable.img_myfeed_1, map = R.drawable.img_map_2)
-        val data3 = MyFeedData(MyFeedData.MemoType.VIDEO, video = R.raw.home, map = R.drawable.img_map_3)
-        //val data4 = MyFeedData(MyFeedData.MemoType.AUDIO, audio = R.raw.sample_1, map = R.drawable.img_map_1)
+        val data1 = MyFeedData(MyFeedData.MemoType.TEXT, 1, 37.653, 127.0149, "인문대학", text="광화문 첫 방문! 이것저것 구경하고 맛있는 것도...")
+        val data2 = MyFeedData(MyFeedData.MemoType.IMAGE, 0, 37.752, 127.115, "어딘가", image = R.drawable.img_myfeed_1)
+        val data3 = MyFeedData(MyFeedData.MemoType.VIDEO, 1, 37.554, 127.2148,"수유역", video = R.raw.home)
+        //val data4 = MyFeedData(MyFeedData.MemoType.AUDIO, 0, 37.453, 127.2149, "장소테스트", audio = R.raw.sample_1)
 
         return listOf(data1, data2, data3)
         //return listOf(data1, data2, data3, data4)

@@ -12,17 +12,70 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
+import com.google.android.gms.maps.MapsInitializer
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 class MyFeedAdapter(private val context: Context, private val itemList: List<MyFeedData>) :
     RecyclerView.Adapter<MyFeedAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), OnMapReadyCallback {
         val text: TextView = view.findViewById(R.id.text)
         val image: ImageView = view.findViewById(R.id.image)
         val video: VideoView = view.findViewById(R.id.video)
         val audio: ImageButton = view.findViewById(R.id.audio)
-        val map: ImageView = view.findViewById(R.id.map)
         val divider: View = view.findViewById(R.id.divider)
+        val mapView: MapView = view.findViewById(R.id.map)
+
+        private lateinit var map: GoogleMap
+        lateinit var latLng: LatLng
+        var inout: Int = 2
+        var color = BitmapDescriptorFactory.HUE_YELLOW
+        lateinit var addr: String
+
+        init {
+            with(mapView) {
+                onCreate(null)
+                getMapAsync(this@ViewHolder)
+            }
+        }
+
+
+        fun setMapLocation() {
+            if (!::map.isInitialized) return
+            with(map) {
+                moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+                when (inout) {
+                    1 -> color =BitmapDescriptorFactory.HUE_VIOLET
+                    0 -> color =BitmapDescriptorFactory.HUE_ORANGE
+                }
+
+                addMarker(
+                    MarkerOptions().position(latLng).title(addr).icon(
+                        BitmapDescriptorFactory.defaultMarker(color)
+                    )
+                )
+                mapType = GoogleMap.MAP_TYPE_NORMAL
+            }
+        }
+
+        override fun onMapReady(googleMap: GoogleMap) {
+            MapsInitializer.initialize(context)
+            map = googleMap ?: return
+            setMapLocation()
+        }
+
+        fun clearView() {
+            with(map) {
+                clear()
+                mapType = GoogleMap.MAP_TYPE_NONE
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,8 +85,11 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemList[position]
-        holder.map.setImageResource(item.map)
-
+        //holder.map.setImageResource(item.map)
+        holder.inout = item.inout
+        holder.latLng = LatLng(item.lat, item.lng)
+        holder.addr = item.addressDetail
+        holder.setMapLocation()
         when (item.memoType) {
             MyFeedData.MemoType.TEXT -> {
                 holder.text.text = item.text
@@ -41,7 +97,7 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
                 holder.image.visibility = View.GONE
                 holder.video.visibility = View.GONE
                 holder.audio.visibility = View.GONE
-                holder.map.visibility = View.VISIBLE
+                //holder.mapView.visibility = View.VISIBLE
             }
 
             MyFeedData.MemoType.IMAGE -> {
