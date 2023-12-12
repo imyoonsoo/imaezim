@@ -33,7 +33,7 @@
             android:layout_marginStart="5dp"
             android:text="TextView"
             android:textSize="20sp"
-            android:background="#f1edee"
+            android:background="@color/text"
             app:layout_constraintBottom_toBottomOf="@+id/map"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/map" />
@@ -49,6 +49,15 @@
 
         <VideoView
             android:id="@+id/video"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/map"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/map" />
+
+        <ImageView
+            android:id="@+id/videoImage"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginStart="5dp"

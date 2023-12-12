@@ -2,6 +2,8 @@
 package com.example.imaezim
 
 import MyFeedData
+import android.graphics.Bitmap
+import android.media.MediaMetadataRetriever
 import android.content.Context
 import android.net.Uri
 import android.view.LayoutInflater
@@ -28,7 +30,9 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
         val text: TextView = view.findViewById(R.id.text)
         val image: ImageView = view.findViewById(R.id.image)
         val video: VideoView = view.findViewById(R.id.video)
+        val videoImage: ImageView = view.findViewById(R.id.videoImage)
         val audio: ImageButton = view.findViewById(R.id.audio)
+        val time : TextView = view.findViewById(R.id.time)
         val divider: View = view.findViewById(R.id.divider)
         val mapView: MapView = view.findViewById(R.id.map)
 
@@ -86,6 +90,7 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemList[position]
         //holder.map.setImageResource(item.map)
+        holder.time.text = item.time
         holder.inout = item.inout
         holder.latLng = LatLng(item.lat, item.lng)
         holder.addr = item.addressDetail
@@ -96,6 +101,7 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
                 holder.text.visibility = View.VISIBLE
                 holder.image.visibility = View.GONE
                 holder.video.visibility = View.GONE
+                holder.videoImage.visibility = View.GONE
                 holder.audio.visibility = View.GONE
                 //holder.mapView.visibility = View.VISIBLE
             }
@@ -104,12 +110,28 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
                 holder.image.setImageResource(item.image)
                 holder.text.visibility = View.GONE
                 holder.video.visibility = View.GONE
+                holder.videoImage.visibility = View.GONE
                 holder.audio.visibility = View.GONE
             }
 
             MyFeedData.MemoType.VIDEO -> {
-                holder.video.visibility = View.VISIBLE
-                holder.video.setVideoURI(Uri.parse("android.resource://" + context.packageName + "/" + item.video))
+                // 비디오 썸네일 생성
+                val retriever = MediaMetadataRetriever();
+                retriever.setDataSource(context, Uri.parse("android.resource://" + context.packageName + "/" + item.video))
+                val bitmap = retriever.getFrameAtTime(0, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)
+                retriever.release()
+
+                // 비디오 썸네일을 ImageView에 설정
+                holder.videoImage.setImageBitmap(bitmap)
+
+                // 비디오 클릭 시 재생
+                holder.videoImage.setOnClickListener{
+                    holder.video.visibility = View.VISIBLE
+                    val videoUri = Uri.parse("android.resource://" + context.packageName + "/" + item.video)
+                    holder.video.setVideoURI(videoUri)
+                    holder.video.start()
+                }
+                holder.videoImage.visibility = View.VISIBLE
                 holder.text.visibility = View.GONE
                 holder.image.visibility = View.GONE
                 holder.audio.visibility = View.GONE
@@ -120,6 +142,7 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
                 holder.text.visibility = View.GONE
                 holder.image.visibility = View.GONE
                 holder.video.visibility = View.GONE
+                holder.videoImage.visibility = View.GONE
             }
         }
         if (position < itemList.size - 1)
