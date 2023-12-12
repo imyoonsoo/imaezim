@@ -5,6 +5,7 @@ import MyFeedData
 import android.graphics.Bitmap
 import android.media.MediaMetadataRetriever
 import android.content.Context
+import android.media.MediaPlayer
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -139,6 +140,14 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
 
             MyFeedData.MemoType.AUDIO -> {
                 holder.audio.visibility = View.VISIBLE
+                // 오디오 클릭 시 재생
+                holder.audio.setOnClickListener {
+                    val audioUri = Uri.parse("android.resource://" + context.packageName + "/" + item.audio)
+                    val mediaPlayer = MediaPlayer()
+                    mediaPlayer.setDataSource(context, audioUri)
+                    mediaPlayer.prepare()
+                    mediaPlayer.start()
+                }
                 holder.text.visibility = View.GONE
                 holder.image.visibility = View.GONE
                 holder.video.visibility = View.GONE
