@@ -2,9 +2,8 @@
 package com.example.imaezim
 
 import MyFeedData
-import android.graphics.Bitmap
-import android.media.MediaMetadataRetriever
 import android.content.Context
+import android.media.MediaMetadataRetriever
 import android.media.MediaPlayer
 import android.net.Uri
 import android.view.LayoutInflater
@@ -23,6 +22,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.squareup.picasso.Picasso
 
 class MyFeedAdapter(private val context: Context, private val itemList: List<MyFeedData>) :
     RecyclerView.Adapter<MyFeedAdapter.ViewHolder>() {
@@ -108,7 +108,11 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
             }
 
             MyFeedData.MemoType.IMAGE -> {
-                holder.image.setImageResource(item.image)
+                Picasso.get()
+                    .load("http://34.64.197.160:8000" + item.image)
+                    .error(R.drawable.img_myfeed_1)
+                    .into(holder.image);
+                //holder.image.setImageResource(item.image)
                 holder.text.visibility = View.GONE
                 holder.video.visibility = View.GONE
                 holder.videoImage.visibility = View.GONE
@@ -116,22 +120,22 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
             }
 
             MyFeedData.MemoType.VIDEO -> {
-                // 비디오 썸네일 생성
-                val retriever = MediaMetadataRetriever();
-                retriever.setDataSource(context, Uri.parse("android.resource://" + context.packageName + "/" + item.video))
-                val bitmap = retriever.getFrameAtTime(0, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)
-                retriever.release()
-
-                // 비디오 썸네일을 ImageView에 설정
-                holder.videoImage.setImageBitmap(bitmap)
+//                // 비디오 썸네일 생성
+//                val retriever = MediaMetadataRetriever();
+//                retriever.setDataSource(context, Uri.parse("android.resource://" + context.packageName + "/" + R.raw.home))
+//                val bitmap = retriever.getFrameAtTime(0, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)
+//                retriever.release()
+//
+//                // 비디오 썸네일을 ImageView에 설정
+//                holder.videoImage.setImageBitmap(bitmap)
 
                 // 비디오 클릭 시 재생
-                holder.videoImage.setOnClickListener{
-                    holder.video.visibility = View.VISIBLE
-                    val videoUri = Uri.parse("android.resource://" + context.packageName + "/" + item.video)
-                    holder.video.setVideoURI(videoUri)
-                    holder.video.start()
-                }
+//                holder.videoImage.setOnClickListener{
+//                    holder.video.visibility = View.VISIBLE
+//                    val videoUri = Uri.parse("android.resource://" + context.packageName + "/" + R.raw.home)
+//                    holder.video.setVideoURI(videoUri)
+//                    holder.video.start()
+//                }
                 holder.videoImage.visibility = View.VISIBLE
                 holder.text.visibility = View.GONE
                 holder.image.visibility = View.GONE
@@ -141,13 +145,13 @@ class MyFeedAdapter(private val context: Context, private val itemList: List<MyF
             MyFeedData.MemoType.AUDIO -> {
                 holder.audio.visibility = View.VISIBLE
                 // 오디오 클릭 시 재생
-                holder.audio.setOnClickListener {
-                    val audioUri = Uri.parse("android.resource://" + context.packageName + "/" + item.audio)
-                    val mediaPlayer = MediaPlayer()
-                    mediaPlayer.setDataSource(context, audioUri)
-                    mediaPlayer.prepare()
-                    mediaPlayer.start()
-                }
+//                holder.audio.setOnClickListener {
+//                    val audioUri = Uri.parse("android.resource://" + context.packageName + "/" + R.raw.sample_1)
+//                    val mediaPlayer = MediaPlayer()
+//                    mediaPlayer.setDataSource(context, audioUri)
+//                    mediaPlayer.prepare()
+//                    mediaPlayer.start()
+//                }
                 holder.text.visibility = View.GONE
                 holder.image.visibility = View.GONE
                 holder.video.visibility = View.GONE

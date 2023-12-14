@@ -19,7 +19,7 @@ object RetrofitClient {
 
         if(retrofitClient == null){
             retrofitClient = Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8000")
+                .baseUrl("http://34.64.197.160:8000")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(clientBuilder.build())
                 .build()

@@ -5,9 +5,9 @@ data class MyFeedData(
     val lng : Double,
     val addressDetail : String,
     val text: String? = null,
-    val image: Int = 0,
-    val video: Int = 0,
-    val audio: Int = 0,
+    val image: String? = null,
+    val video: String? = null,
+    val audio: String? = null,
     val time : String
 ) {
     enum class MemoType {

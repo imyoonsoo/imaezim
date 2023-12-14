@@ -35,8 +35,7 @@ class JoinActivity : AppCompatActivity() {
             else if (email_input == "") Toast.makeText(this@JoinActivity, "이메일 입력해주세요", Toast.LENGTH_SHORT).show()
             else if (password_input == "") Toast.makeText(this@JoinActivity, "비밀번호 입력해주세요", Toast.LENGTH_SHORT).show()
             else if (password_input2 == "") Toast.makeText(this@JoinActivity, "비밀번호 입력해주세요", Toast.LENGTH_SHORT).show()
-            else if (password_input != password_input2) Toast.makeText(this@JoinActivity, "비밀번호가  일치하지않습니다", Toast.LENGTH_SHORT).show()
-            else if (nickname_input == "") Toast.makeText(this@JoinActivity, "닉네임 입력해주세요", Toast.LENGTH_SHORT).show()
+            else if (password_input != password_input2) Toast.makeText(this@JoinActivity, "비밀번호가 일치하지않습니다", Toast.LENGTH_SHORT).show()
             else if (true) {
                 //Toast.makeText(this@JoinActivity, "성공", Toast.LENGTH_SHORT).show()
                 val UserService = RetrofitClient.getClient()?.create(UserService::class.java)
@@ -70,8 +69,6 @@ class JoinActivity : AppCompatActivity() {
                                 lateinit var data_list: List<User>
                                 data_list = response.body()!!
                                 for (data in data_list) {
-                                }
-                                for (data in data_list) {
                                     LoginUser.id = data.id
                                     LoginUser.email = data.email
                                     LoginUser.password = data.password
@@ -85,7 +82,7 @@ class JoinActivity : AppCompatActivity() {
 
                                 //회원가입 & 회원가입한 user 정보 얻기 성공시 페이지 이동
                                 //로그인 성공시 화면 전환
-                                val intent = Intent(this@JoinActivity, JoinActivity::class.java)
+                                val intent = Intent(this@JoinActivity, HomeActivity::class.java)
                                 startActivity(intent)
                             }
                             override fun onFailure(call: Call<List<User>>, t: Throwable) {

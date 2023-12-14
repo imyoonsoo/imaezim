@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                                 //Toast.makeText(this@MainActivity, "로그인 성공!!!", Toast.LENGTH_SHORT).show()
 
                                 //로그인 성공시 화면 전환
-                                val intent = Intent(this@MainActivity, JoinActivity::class.java)
+                                val intent = Intent(this@MainActivity, HomeActivity::class.java)
                                 startActivity(intent)
                                 return
                             } else {

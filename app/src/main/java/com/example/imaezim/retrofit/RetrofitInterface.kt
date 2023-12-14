@@ -22,3 +22,18 @@ interface UserService {
         @Field("email") email : String,   //email 입력 받아서 해당 유저만 정보 가져오기
     ) : Call<List<User>>
 }
+
+interface PostService {
+    @get : GET("/sns/feed/")
+    val getPost: Call<List<Post>>
+
+//    @FormUrlEncoded
+//    @POST("/sns/mypage/")
+//    fun getMyPost(
+//        @Field("userId") userId : Int   //id로 해당 유저 post만 가져오기
+//    ) : Call<List<MyPost>>
+    @GET("/sns/mypage/") // 엔드포인트 URL 수정
+    fun getMyPost(
+        @Query("userId") userId: Int // 쿼리 파라미터로 변경
+    ): Call<List<MyPost>>
+}
