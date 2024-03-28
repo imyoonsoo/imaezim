@@ -1,9 +1,11 @@
 package com.example.imaezim
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -24,6 +26,7 @@ class HomeAdapter(private val context: Context, private val itemList: List<HomeD
         val time : TextView = view.findViewById(R.id.time)
         val mapView : MapView = view.findViewById(R.id.mapView)
         val divider : View = view.findViewById(R.id.divider)
+        val startNavigation : Button = view.findViewById(R.id.naviButton)
 
         private lateinit var map : GoogleMap
         lateinit var latLng: LatLng
@@ -35,6 +38,14 @@ class HomeAdapter(private val context: Context, private val itemList: List<HomeD
             with(mapView){
                 onCreate(null)
                 getMapAsync(this@ViewHolder)
+            }
+
+            // 길안내 버튼 클릭 시
+            startNavigation.setOnClickListener {
+                val naviIntent = Intent(context, MyFeedActivity::class.java)
+                naviIntent.putExtra("inout", inout) // 실외 or 실내 정보 전달
+                naviIntent.putExtra("latitude", latLng.latitude) // 위도값 전달
+                naviIntent.putExtra("longitude", latLng.longitude) // 경도값 전달
             }
         }
 

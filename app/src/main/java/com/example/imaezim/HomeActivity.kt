@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        //generateData()
         // 리사이클러뷰 초기화
 //        val recyclerView : RecyclerView = findViewById(R.id.rv_home)
 //        recyclerView.layoutManager = LinearLayoutManager(this)
