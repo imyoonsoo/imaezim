@@ -5,10 +5,19 @@
 
 > **이어짐 · 맺어짐 · 그려짐**<br>현실 공간에 AR 메모를 남기고, 직접 찾아가 감상하는 위치 기반 AR SNS
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4" width="720" alt="IMAEZIM 시연" />
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/tUaR9V3uTP4">
+    <img src="https://img.shields.io/badge/전체%20시연%20영상%20보기-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube 시연 영상" />
+  </a>
+</p>
+
 ## 📍 목차
 
 - [개요](#overview)
-- [Demo](#demo)
 - [시스템 아키텍처](#architecture)
 - [프로젝트 구조](#structure)
 - [주요 기능](#features)
@@ -33,32 +42,7 @@ SNS 사용 시간이 늘수록 대면 소통은 줄어든다는 문제에 주목
 기술적으로는 **Android(Kotlin) SNS 앱 + Unity(ARCore) AR 엔진 + Django REST 백엔드** 3계층 구조이며,
 AR 기능은 ARCore의 **Cloud Anchor**(실내)와 **Geospatial Anchor**(실외) 두 가지 앵커 방식을 목적에 따라 나눠 사용합니다.
 
-> APK 설치형으로 진행한 프로젝트라 배포 링크가 없고, 백엔드 서버도 현재 미운영입니다. 실행 결과는 아래 Demo로 확인해 주세요.
-
----
-
-<div id="demo"></div>
-
-## 🎬 Demo
-
-<table>
-  <tr>
-    <td align="center" width="60%">
-      <img src="https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4" width="100%" alt="IMAEZIM 전체 기능 흐름" />
-      <br/><sub><b>전체 기능 흐름</b></sub>
-    </td>
-    <td align="center" width="40%">
-      <img src="https://github.com/user-attachments/assets/ff9056ec-ca90-464b-b745-c633d7ed5ce8" width="55%" alt="AR 메모 화면" />
-      <br/><sub><b>AR 메모 화면</b></sub>
-    </td>
-  </tr>
-</table>
-
-<p align="center">
-  <a href="https://youtu.be/tUaR9V3uTP4">
-    <img src="https://img.shields.io/badge/전체%20시연%20영상%20보기-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube 시연 영상" />
-  </a>
-</p>
+> APK 설치형으로 진행한 프로젝트라 배포 링크가 없고, 백엔드 서버도 현재 미운영입니다. 실행 결과는 위 시연 영상으로 확인해 주세요.
 
 ---
 
