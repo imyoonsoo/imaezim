@@ -15,7 +15,7 @@
 
 ## 📍 목차
 
-- [개요](#overview)
+- [프로젝트 개요](#info)
 - [주요 기능](#features)
 - [기술 스택](#stack)
 - [시스템 아키텍처](#architecture)
@@ -24,15 +24,16 @@
 
 ---
 
-<div id="overview"></div>
+<div id="info"></div>
 
-## 🖥️ 개요
+## 🖥️ 프로젝트 개요
 
-| | |
-|---|---|
-| **개발기간** | 2023.10 ~ 2024.09 |
-| **팀 구성** | 5인 (Frontend 3 · Backend 2) |
-| **성과** | 캡스톤디자인 경연대회 우수상 · 한국정보통신학회논문지(KCI) 게재 |
+|              |                                                                 |
+| ------------ | --------------------------------------------------------------- |
+| **개발기간** | 2023.10 ~ 2024.09                                               |
+| **팀 구성**  | 5인 (Frontend 3 · Backend 2)                                    |
+| **담당**     | AR 실내 메모 · AR 게임 3D 모델링 · Android 앱                   |
+| **성과**     | 캡스톤디자인 경연대회 우수상 · 한국정보통신학회논문지(KCI) 게재 |
 
 SNS 사용 시간이 늘수록 대면 소통은 줄어든다는 문제에 주목해, AR로 현실 공간의 상호작용을 유도하는 참여형 SNS를 설계했습니다.
 사용자는 실제 장소에 글·사진·영상 형태의 AR 메모를 남기고, 다른 사용자는 그 자리에 직접 찾아가야 메모를 볼 수 있습니다.
@@ -86,16 +87,16 @@ GPS가 닿지 않는 실내에서도 메모 위치를 고정하기 위해 **ARCo
 
 ## 🔧 기술 스택
 
-| Category | Tech |
-|---|---|
-| **Client** | Kotlin, Android, Unity |
-| **AR** | ARCore, Cloud Anchor, Geospatial API |
-| **Multiplayer** | Photon PUN2 |
-| **Server** | Python, Django, Django REST Framework |
-| **Database** | SQLite |
-| **Computer Vision** | YOLO |
-| **Map / Location** | SK T-map, Google Elevation, Google Static Maps |
-| **3D** | Blender |
+| Category            | Tech                                           |
+| ------------------- | ---------------------------------------------- |
+| **Client**          | Kotlin, Android, Unity                         |
+| **AR**              | ARCore, Cloud Anchor, Geospatial API           |
+| **Multiplayer**     | Photon PUN2                                    |
+| **Server**          | Python, Django, Django REST Framework          |
+| **Database**        | SQLite                                         |
+| **Computer Vision** | YOLO                                           |
+| **Map / Location**  | SK T-map, Google Elevation, Google Static Maps |
+| **3D**              | Blender                                        |
 
 ---
 
@@ -124,13 +125,13 @@ graph TD
 
 Unity를 Android 라이브러리로 export해 통합하는 구조이며, 연동은 **`UnitySendMessage` 단방향 호출**로 설계했습니다.
 
-| 호출 순서 | 메서드 | 파라미터 | 동작 |
-|:---:|---|---|---|
-| 1 | `AndUserId` | 사용자 ID | 사용자 식별자 전달 |
-| 2 | `AndUserInfo` | 이메일 | 계정 정보 전달 |
-| 3 | `AndUserNick` | 닉네임 | 메모 작성자·게임 닉네임에 사용 |
-| 4 | `AndLatitude` | 위도 | 목적지 위도 저장 |
-| 5 | `AndLongitude` | 경도 | 목적지 경도 저장 후 AR 길찾기 씬 진입 |
+| 호출 순서 | 메서드         | 파라미터  | 동작                                  |
+| :-------: | -------------- | --------- | ------------------------------------- |
+|     1     | `AndUserId`    | 사용자 ID | 사용자 식별자 전달                    |
+|     2     | `AndUserInfo`  | 이메일    | 계정 정보 전달                        |
+|     3     | `AndUserNick`  | 닉네임    | 메모 작성자·게임 닉네임에 사용        |
+|     4     | `AndLatitude`  | 위도      | 목적지 위도 저장                      |
+|     5     | `AndLongitude` | 경도      | 목적지 경도 저장 후 AR 길찾기 씬 진입 |
 
 ---
 
@@ -192,7 +193,7 @@ imaezim/
       <a href="https://github.com/imyoonsoo">
         <img src="https://github.com/imyoonsoo.png" width="100px" alt="서윤수"/>
       </a>
-      <br/><b>서윤수</b><br/>
+      <br/><b>서윤수 (본인)</b><br/>
       <img src="https://img.shields.io/badge/Frontend-3178C6?style=flat-square"/>
       <br/>
       <sub>AR 실내 메모<br/>AR 게임 3D 모델링<br/>Android 앱</sub>
