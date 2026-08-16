@@ -166,8 +166,6 @@ imaezim/
                                    # AR 실외 메모 · AR 길찾기
 ```
 
-**빌드 씬 10개**: `MainTitleScene` · `IndoorScene` · `Geospatial` · `ObjMemoScene` · `Quiz3DScene` · `Scene_Lobby` · `Scene_PlayerSelection` · `Scene_SearchRoom` · `Scene_Loading` · `BattleArena_H`
-
 ---
 
 <div id="team"></div>
