@@ -96,7 +96,7 @@ GPS가 닿지 않는 실내에서도 메모 위치를 고정하기 위해 **ARCo
 | **Server**          | Python, Django, Django REST Framework       |
 | **Database**        | SQLite                                      |
 | **Computer Vision** | YOLO                                        |
-| **Map / Location**  | T-map, Google Elevation, Google Static Maps |
+| **Map / Location**  | T-map API, Google Elevation, Google Static Maps |
 | **3D Modeling**     | Blender                                     |
 
 ---
