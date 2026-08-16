@@ -98,7 +98,6 @@ GPS가 닿지 않는 실내에서도 메모 위치를 고정하기 위해 **ARCo
 | **Computer Vision** | YOLO |
 | **Map / Location** | SK T-map, Google Elevation, Google Static Maps |
 | **3D** | Blender |
-| **Collaboration** | Notion, Figma, GitHub |
 
 ---
 
