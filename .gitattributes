@@ -1,0 +1,13 @@
+# GitHub Linguist: 외부 SDK·에셋을 언어 통계에서 제외
+# 직접 작성한 코드(app/, unity/Assets/Scripts, ARQuizScript, Samples 등)는 그대로 집계됩니다.
+
+unity/Assets/Photon/**              linguist-vendored
+"unity/Assets/TextMesh Pro/**"      linguist-vendored
+unity/Assets/Plugins/**             linguist-vendored
+"unity/Assets/Joystick Pack/**"     linguist-vendored
+unity/Assets/Pekdata/**             linguist-vendored
+unity/Assets/ExampleAssets/**       linguist-vendored
+unity/Assets/3Dfrk/**               linguist-vendored
+"unity/Assets/Sweet Land GUI/**"    linguist-vendored
+unity/Assets/Presents/**            linguist-vendored
+unity/Assets/XRI/**                 linguist-vendored
