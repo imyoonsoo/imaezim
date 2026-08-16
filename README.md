@@ -139,7 +139,7 @@ Unity를 Android 라이브러리로 export해 통합하는 구조이며, 연동�
 ## 🗂️ 프로젝트 구조
 
 `app/`과 `unity/`는 **각각 독립적으로 열고 빌드하는 별도 프로젝트**입니다.
-Django 서버는 [imaezim-ar-sns](https://github.com/literallyme1/imaezim-ar-sns) 저장소에 있습니다.
+Django 서버는 [백엔드 저장소](https://github.com/literallyme1/imaezim-ar-sns)에 있습니다.
 
 ```
 imaezim/
