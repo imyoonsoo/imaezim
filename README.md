@@ -91,9 +91,9 @@ GPS가 닿지 않는 실내에서도 메모 위치를 고정하기 위해 **ARCo
 | Category | Tech |
 |---|---|
 | **Client** | Kotlin, Android, Unity |
-| **AR** | ARCore, Geospatial API, Cloud Anchor, Plane Detection |
+| **AR** | ARCore, Cloud Anchor, Geospatial API |
 | **Multiplayer** | Photon PUN2 |
-| **Server** | Python, Django 4.2.2, Django REST Framework 3.14.0 |
+| **Server** | Python, Django, Django REST Framework |
 | **Database** | SQLite |
 | **Computer Vision** | YOLO |
 | **Map / Location** | SK T-map, Google Elevation, Google Static Maps |
