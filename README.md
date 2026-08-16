@@ -3,15 +3,15 @@
   IMAEZIM
 </h1>
 
-> **이어짐 · 맺어짐 · 그려짐**<br>현실 공간에 AR 메모를 남기고, 직접 찾아가 감상하는 위치 기반 AR SNS
-
-> **Demo** · 아래 이미지를 클릭하면 YouTube 전체 시연 영상으로 이동합니다.
+> 이어짐 맺어짐 그려짐, 이매짐
 
 <p align="center">
   <a href="https://youtu.be/tUaR9V3uTP4">
     <img src="https://img.youtube.com/vi/tUaR9V3uTP4/maxresdefault.jpg" width="480" alt="IMAEZIM 전체 시연 영상 보러가기" />
   </a>
 </p>
+
+> **Demo** · 위 이미지를 클릭하면 YouTube 전체 시연 영상으로 이동합니다.
 
 ## 📍 목차
 
@@ -32,7 +32,6 @@
 |---|---|
 | **개발 기간** | 2023.12 ~ 2024.09 |
 | **팀 구성** | 5인 (Frontend 3 · Backend 2) |
-| **플랫폼** | Android (ARCore 지원 단말) |
 
 SNS 사용 시간이 늘수록 대면 소통은 줄어든다는 문제에 주목해, **AR로 현실 공간의 상호작용을 유도하는 참여형 SNS**를 설계했습니다.
 사용자는 실제 장소에 글·사진·영상 형태의 AR 메모를 남기고, 다른 사용자는 **그 자리에 직접 찾아가야** 메모를 볼 수 있습니다.
