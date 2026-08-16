@@ -1,5 +1,5 @@
 <h1>
-  <img src="https://github.com/user-attachments/assets/8bd4ee3d-5a67-4d0a-a076-5486d63f5a8d" width="72" align="top" alt="" />
+  <img src="https://github.com/user-attachments/assets/8bd4ee3d-5a67-4d0a-a076-5486d63f5a8d" width="60" align="top" alt="" />
   IMAEZIM
 </h1>
 
