@@ -1,4 +1,4 @@
-# IMAEZIM
+# 🗺️ IMAEZIM
 
 > **이어짐 · 맺어짐 · 그려짐**<br>현실 공간에 AR 메모를 남기고, 직접 찾아가 감상하는 위치 기반 AR SNS
 
@@ -12,10 +12,6 @@
   <img src="https://img.shields.io/badge/ARCore-Geospatial%20%2B%20Cloud%20Anchor-4285F4?style=flat-square&logo=google&logoColor=white" />
   <img src="https://img.shields.io/badge/Django-REST-092E20?style=flat-square&logo=django&logoColor=white" />
   <img src="https://img.shields.io/badge/Photon-PUN2-0D96F6?style=flat-square" />
-</p>
-
-<p align="center">
-  <b><a href="https://youtu.be/tUaR9V3uTP4">📺 데모 영상 보기 (YouTube)</a></b>
 </p>
 
 ## 📍 목차
@@ -34,7 +30,7 @@
 
 <div id="overview"></div>
 
-## 🚀 개요
+## 📅 개요
 
 | | |
 |---|---|
@@ -54,16 +50,23 @@ AR 기능은 ARCore의 **Cloud Anchor**(실내)와 **Geospatial Anchor**(실외)
 
 ## 🎬 데모
 
+<table>
+  <tr>
+    <td align="center" width="60%">
+      <img src="https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4" width="100%" alt="IMAEZIM 전체 기능 흐름" />
+      <br/><sub><b>전체 기능 흐름</b></sub>
+    </td>
+    <td align="center" width="40%">
+      <img src="https://github.com/user-attachments/assets/ff9056ec-ca90-464b-b745-c633d7ed5ce8" width="55%" alt="AR 메모 화면" />
+      <br/><sub><b>AR 메모 화면</b></sub>
+    </td>
+  </tr>
+</table>
+
 <p align="center">
   <a href="https://youtu.be/tUaR9V3uTP4">
-    <img width="480" src="https://img.youtube.com/vi/tUaR9V3uTP4/hqdefault.jpg" alt="IMAEZIM 시연 영상" />
+    <img src="https://img.shields.io/badge/전체%20시연%20영상%20보기-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube 시연 영상" />
   </a>
-</p>
-
-![IMAEZIM demo](https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4)
-
-<p align="center">
-  <img width="240" alt="AR 메모 화면" src="https://github.com/user-attachments/assets/ff9056ec-ca90-464b-b745-c633d7ed5ce8" />
 </p>
 
 > **🚧 현재 상태**
@@ -74,7 +77,7 @@ AR 기능은 ARCore의 **Cloud Anchor**(실내)와 **Geospatial Anchor**(실외)
 
 <div id="architecture"></div>
 
-## 🏗 시스템 아키텍처
+## 🏗️ 시스템 아키텍처
 
 ```mermaid
 graph TD
@@ -113,7 +116,7 @@ Unity를 Android 라이브러리로 export해 통합하는 구조이며, 연동�
 
 <div id="structure"></div>
 
-## 📁 프로젝트 구조
+## 🗂️ 프로젝트 구조
 
 `app/`과 `unity/`는 **각각 독립적으로 열고 빌드하는 별도 프로젝트**입니다. (`settings.gradle.kts`는 `:app`만 포함)
 
@@ -221,7 +224,7 @@ SNS 피드에서 고른 메모까지 **AR 화살표로 안내**합니다.
 
 <div id="stack"></div>
 
-## 🧰 기술 스택
+## 🔧 기술 스택
 
 ### Android (`app/`)
 
@@ -362,10 +365,52 @@ Unity 프로젝트를 **Android 라이브러리로 export**한 뒤 `unityLibrary
 
 ## 👥 팀원 및 역할
 
-| 이름 | GitHub | 파트 | 담당 |
-|---|---|---|---|
-| **경다은** (팀장) | [@literallyme1](https://github.com/literallyme1) | Server | AR 실외 메모 · AR 게임 · AR 퀴즈 · 서버 |
-| **김가윤** | [@JCTA0125](https://github.com/JCTA0125) | Android | AR 실내 메모 · AR 게임 · Android 앱 |
-| **서윤수** | [@imyoonsoo](https://github.com/imyoonsoo) | Android | AR 실내 메모 · AR 게임 3D 모델링 · Android 앱 |
-| **오다은** | [@daeun408](https://github.com/daeun408) | Server | AR 실외 메모 · 물건 메모 · AR 길찾기 · 서버 |
-| **전은채** | [@AJ04K](https://github.com/AJ04K) | Android | AR 실내 메모 · 물건 메모 · AR 길찾기 · Android 앱 |
+<table>
+  <tr>
+    <td align="center" width="150px">
+      <a href="https://github.com/literallyme1">
+        <img src="https://github.com/literallyme1.png" width="100px" alt="경다은"/>
+      </a>
+      <br/><b>경다은 (팀장)</b><br/>
+      <img src="https://img.shields.io/badge/Backend-339933?style=flat-square"/>
+      <br/>
+      <sub>AR 실외 메모<br/>AR 게임<br/>AR 퀴즈<br/>Server</sub>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/JCTA0125">
+        <img src="https://github.com/JCTA0125.png" width="100px" alt="김가윤"/>
+      </a>
+      <br/><b>김가윤</b><br/>
+      <img src="https://img.shields.io/badge/Frontend-3178C6?style=flat-square"/>
+      <br/>
+      <sub>AR 실내 메모<br/>AR 게임<br/>Android 앱</sub>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/imyoonsoo">
+        <img src="https://github.com/imyoonsoo.png" width="100px" alt="서윤수"/>
+      </a>
+      <br/><b>서윤수</b><br/>
+      <img src="https://img.shields.io/badge/Frontend-3178C6?style=flat-square"/>
+      <br/>
+      <sub>AR 실내 메모<br/>AR 게임 3D 모델링<br/>Android 앱</sub>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/daeun408">
+        <img src="https://github.com/daeun408.png" width="100px" alt="오다은"/>
+      </a>
+      <br/><b>오다은</b><br/>
+      <img src="https://img.shields.io/badge/Backend-339933?style=flat-square"/>
+      <br/>
+      <sub>AR 실외 메모<br/>물건 메모<br/>AR 길찾기<br/>Server</sub>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/AJ04K">
+        <img src="https://github.com/AJ04K.png" width="100px" alt="전은채"/>
+      </a>
+      <br/><b>전은채</b><br/>
+      <img src="https://img.shields.io/badge/Frontend-3178C6?style=flat-square"/>
+      <br/>
+      <sub>AR 실내 메모<br/>물건 메모<br/>AR 길찾기<br/>Android 앱</sub>
+    </td>
+  </tr>
+</table>
