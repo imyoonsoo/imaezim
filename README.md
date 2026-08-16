@@ -134,8 +134,6 @@ Unity를 Android 라이브러리로 export해 통합하는 구조이며, 연동�
 | 4 | `AndLatitude` | 위도 | 목적지 위도 저장 |
 | 5 | `AndLongitude` | 경도 | 목적지 경도 저장 후 AR 길찾기 씬 진입 |
 
-4 → 5 **호출 순서가 보장돼야** 합니다. 마지막 `AndLongitude`가 씬 전환까지 함께 수행합니다.
-
 ---
 
 <div id="structure"></div>
