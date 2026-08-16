@@ -1,23 +1,25 @@
 <h1>
-  <img src="https://github.com/user-attachments/assets/8bd4ee3d-5a67-4d0a-a076-5486d63f5a8d" width="44" align="top" alt="" />
+  <img src="https://github.com/user-attachments/assets/8bd4ee3d-5a67-4d0a-a076-5486d63f5a8d" width="50" align="top" alt="" />
   IMAEZIM
 </h1>
 
 > **이어짐 · 맺어짐 · 그려짐**<br>현실 공간에 AR 메모를 남기고, 직접 찾아가 감상하는 위치 기반 AR SNS
 
+> **Demo** · 아래 이미지를 클릭하면 YouTube 전체 시연 영상으로 이동합니다.
+
 <p align="center">
   <a href="https://youtu.be/tUaR9V3uTP4">
-    <img src="https://img.youtube.com/vi/tUaR9V3uTP4/maxresdefault.jpg" width="480" alt="IMAEZIM 시연 영상 보기" />
+    <img src="https://img.youtube.com/vi/tUaR9V3uTP4/maxresdefault.jpg" width="480" alt="IMAEZIM 전체 시연 영상 보러가기" />
   </a>
 </p>
 
 ## 📍 목차
 
 - [개요](#overview)
-- [시스템 아키텍처](#architecture)
-- [프로젝트 구조](#structure)
 - [주요 기능](#features)
 - [기술 스택](#stack)
+- [시스템 아키텍처](#architecture)
+- [프로젝트 구조](#structure)
 - [팀원 및 역할](#team)
 
 ---
@@ -39,6 +41,65 @@ SNS 사용 시간이 늘수록 대면 소통은 줄어든다는 문제에 주목
 AR 기능은 ARCore의 **Cloud Anchor**(실내)와 **Geospatial Anchor**(실외) 두 가지 앵커 방식을 목적에 따라 나눠 사용합니다.
 
 > APK 설치형으로 진행한 프로젝트라 배포 링크가 없고, 백엔드 서버도 현재 미운영입니다. 실행 결과는 위 시연 영상으로 확인해 주세요.
+
+---
+
+<div id="features"></div>
+
+## ✨ 주요 기능
+
+### AR 실내 메모
+
+GPS가 닿지 않는 실내에서도 메모 위치를 고정하기 위해 **ARCore Cloud Anchor**를 사용합니다.
+주변 특징점 품질을 실시간으로 평가해 충분할 때만 앵커를 등록하고, 다른 사용자는 같은 위치·같은 방향에서 메모를 복원합니다.
+
+### AR 실외 메모
+
+**ARCore Geospatial API(VPS)** 로 GPS 오차를 보정해 실제 좌표에 메모를 고정합니다.
+지면 높이는 Terrain Anchor, 건물 옥상은 Rooftop Anchor로 처리하고, Streetscape Geometry로 건물 뒤 메모가 비쳐 보이지 않게 가립니다.
+
+### 물건 메모
+
+후면 카메라로 물건을 여러 각도에서 촬영해 등록하고, 나중에 같은 물건을 비추면 붙여둔 메모를 불러옵니다.
+객체 인식은 서버 사이드 **YOLO**가 담당합니다.
+
+### AR 길찾기
+
+**T-map 보행자 경로 API**로 도보 경로를 받아 각 지점의 고도를 보정한 뒤, 실제 길 위에 AR 화살표를 배치해 목적지 메모까지 안내합니다.
+
+### AR 게임
+
+**Photon PUN2** 기반 2인 실시간 대전입니다.
+평면 감지로 현실 바닥에 경기장을 배치하고, 이동·공격·피격 상태를 룸 단위로 동기화합니다.
+
+### AR 퀴즈
+
+특정 좌표에 3D 퀴즈 오브젝트를 고정해 두고, 직접 이동하며 문제를 풉니다.
+사용자별 정답 이력이 서버에 기록되어 이미 푼 퀴즈는 따로 표시됩니다.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4" height="300" alt="IMAEZIM 기능 시연" />
+  &nbsp;
+  <img src="https://github.com/user-attachments/assets/ff9056ec-ca90-464b-b745-c633d7ed5ce8" height="300" alt="AR 메모 화면" />
+</p>
+
+---
+
+<div id="stack"></div>
+
+## 🔧 기술 스택
+
+| Category | Tech |
+|---|---|
+| **Frontend** | Kotlin · Android · Unity · C# |
+| **AR** | ARCore, Geospatial API, Cloud Anchor, Plane Detection, ARCore Extensions |
+| **Multiplayer** | Photon PUN2 |
+| **Backend** | Python · Django 4.2.2 · Django REST Framework 3.14.0 |
+| **Database** | SQLite |
+| **Vision** | YOLO (서버 사이드 객체 인식) |
+| **Map / Location** | SK T-map 보행자 경로 · Google Elevation · Google Static Maps |
+| **3D** | Blender |
+| **Collaboration** | Notion · Figma · GitHub |
 
 ---
 
@@ -107,70 +168,6 @@ imaezim/
 ```
 
 **빌드 씬 10개**: `MainTitleScene` · `IndoorScene` · `Geospatial` · `ObjMemoScene` · `Quiz3DScene` · `Scene_Lobby` · `Scene_PlayerSelection` · `Scene_SearchRoom` · `Scene_Loading` · `BattleArena_H`
-
----
-
-<div id="features"></div>
-
-## ✨ 주요 기능
-
-### AR 실내 메모
-
-GPS가 닿지 않는 실내에서도 메모 위치를 고정하기 위해 **ARCore Cloud Anchor**를 사용합니다.
-주변 특징점 품질을 실시간으로 평가해 충분할 때만 앵커를 등록하고, 다른 사용자는 같은 위치·같은 방향에서 메모를 복원합니다.
-
-### AR 실외 메모
-
-**ARCore Geospatial API(VPS)** 로 GPS 오차를 보정해 실제 좌표에 메모를 고정합니다.
-지면 높이는 Terrain Anchor, 건물 옥상은 Rooftop Anchor로 처리하고, Streetscape Geometry로 건물 뒤 메모가 비쳐 보이지 않게 가립니다.
-
-### 물건 메모
-
-후면 카메라로 물건을 여러 각도에서 촬영해 등록하고, 나중에 같은 물건을 비추면 붙여둔 메모를 불러옵니다.
-객체 인식은 서버 사이드 **YOLO**가 담당합니다.
-
-### AR 길찾기
-
-**T-map 보행자 경로 API**로 도보 경로를 받아 각 지점의 고도를 보정한 뒤, 실제 길 위에 AR 화살표를 배치해 목적지 메모까지 안내합니다.
-
-### AR 게임
-
-**Photon PUN2** 기반 2인 실시간 대전입니다.
-평면 감지로 현실 바닥에 경기장을 배치하고, 이동·공격·피격 상태를 룸 단위로 동기화합니다.
-
-### AR 퀴즈
-
-특정 좌표에 3D 퀴즈 오브젝트를 고정해 두고, 직접 이동하며 문제를 풉니다.
-사용자별 정답 이력이 서버에 기록되어 이미 푼 퀴즈는 따로 표시됩니다.
-
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4" height="300" alt="IMAEZIM 기능 시연" />
-    </td>
-    <td align="center" width="50%">
-      <img src="https://github.com/user-attachments/assets/ff9056ec-ca90-464b-b745-c633d7ed5ce8" height="300" alt="AR 메모 화면" />
-    </td>
-  </tr>
-</table>
-
----
-
-<div id="stack"></div>
-
-## 🔧 기술 스택
-
-| Category | Tech |
-|---|---|
-| **Client** | Kotlin · Android · Unity 2023.3 · C# |
-| **AR** | ARCore, Geospatial API, Cloud Anchor, Plane Detection, ARCore Extensions 1.43 |
-| **Multiplayer** | Photon PUN2 |
-| **Backend** | Python · Django 4.2.2 · Django REST Framework 3.14.0 |
-| **Database** | SQLite |
-| **Vision** | YOLO (서버 사이드 객체 인식) |
-| **External API** | SK T-map 보행자 경로 · Google Elevation · Google Static Maps |
-| **3D** | Blender |
-| **Collaboration** | Notion · Figma · GitHub |
 
 ---
 
