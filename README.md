@@ -1,17 +1,13 @@
 <h1>
-  <img src="https://github.com/user-attachments/assets/8bd4ee3d-5a67-4d0a-a076-5486d63f5a8d" width="32" align="top" alt="" />
+  <img src="https://github.com/user-attachments/assets/8bd4ee3d-5a67-4d0a-a076-5486d63f5a8d" width="44" align="top" alt="" />
   IMAEZIM
 </h1>
 
 > **이어짐 · 맺어짐 · 그려짐**<br>현실 공간에 AR 메모를 남기고, 직접 찾아가 감상하는 위치 기반 AR SNS
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4" width="720" alt="IMAEZIM 시연" />
-</p>
-
-<p align="center">
   <a href="https://youtu.be/tUaR9V3uTP4">
-    <img src="https://img.shields.io/badge/전체%20시연%20영상%20보기-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube 시연 영상" />
+    <img src="https://img.youtube.com/vi/tUaR9V3uTP4/maxresdefault.jpg" width="480" alt="IMAEZIM 시연 영상 보기" />
   </a>
 </p>
 
@@ -146,6 +142,17 @@ GPS가 닿지 않는 실내에서도 메모 위치를 고정하기 위해 **ARCo
 
 특정 좌표에 3D 퀴즈 오브젝트를 고정해 두고, 직접 이동하며 문제를 풉니다.
 사용자별 정답 이력이 서버에 기록되어 이미 푼 퀴즈는 따로 표시됩니다.
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4" height="300" alt="IMAEZIM 기능 시연" />
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/ff9056ec-ca90-464b-b745-c633d7ed5ce8" height="300" alt="AR 메모 화면" />
+    </td>
+  </tr>
+</table>
 
 ---
 
