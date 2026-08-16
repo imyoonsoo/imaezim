@@ -194,7 +194,7 @@ imaezim/
       <a href="https://github.com/imyoonsoo">
         <img src="https://github.com/imyoonsoo.png" width="100px" alt="서윤수"/>
       </a>
-      <br/><b>서윤수 (본인)</b><br/>
+      <br/><b>서윤수</b><br/>
       <img src="https://img.shields.io/badge/Frontend-3178C6?style=flat-square"/>
       <br/>
       <sub>AR 실내 메모<br/>AR 게임 3D 모델링<br/>Android 앱</sub>
