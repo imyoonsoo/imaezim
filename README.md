@@ -77,9 +77,9 @@ GPS가 닿지 않는 실내에서도 메모 위치를 고정하기 위해 **ARCo
 사용자별 정답 이력이 서버에 기록되어 이미 푼 퀴즈는 따로 표시됩니다.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4" height="300" alt="IMAEZIM 기능 시연" />
+  <img src="https://github.com/user-attachments/assets/717ee5a7-747e-471f-b773-73ec2f531cf4" height="360" alt="IMAEZIM 기능 시연" />
   &nbsp;
-  <img src="https://github.com/user-attachments/assets/ff9056ec-ca90-464b-b745-c633d7ed5ce8" height="300" alt="AR 메모 화면" />
+  <img src="https://github.com/user-attachments/assets/ff9056ec-ca90-464b-b745-c633d7ed5ce8" height="360" alt="AR 메모 화면" />
 </p>
 
 ---
